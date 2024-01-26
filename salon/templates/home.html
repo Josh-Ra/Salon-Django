@@ -1,0 +1,48 @@
+
+{% extends "root.html" %}
+
+{% block content %}
+    <div class="container">
+          <div class="welcome">
+               <h2>Welcome!</h2>
+               <p>The Admired By Many is a high end salon comprised of top international hairstylists who appreciate quality with attention to details.  An upscale yet relaxed atmosphere, Admired By Many is dedicated to providing the best salon experience you’ve ever had.<br><a href="{% url "about"%}">Click here to learn more....</a></p>
+          </div>
+
+          <div class="owner">
+               {% load static %}
+               <img src="{% static "images\IMG_4905.jpg" %}" alt="Owner">
+               <div class="overlay">Jakeylia Small<br><br><p>Mentor and Owner<p></div>
+          </div>
+     </div>
+
+   <div class="services-home">
+        <div class="services-align">
+          <h2>Our services include</h2>
+          <br>
+          <p>Lashes // Hair // Waxing // And <a href="{% url "services" %}">more....</a></p>
+        </div>
+        
+        <div class="services-img">
+          <img src="{% static "images/IMG_3541.jpg" %}" alt="service-picture">
+          <img src="{% static "images/IMG_4923.jpg" %}" alt="service-picture">
+          <img src="{% static "images/IMG_4905.jpg" %}" alt="service-picture">
+        </div>
+   </div>
+
+   <footer class="end-page">
+     <div class='bottom-left'>
+          <h2 class="address">ADDRESS</h2>
+
+          <p>144 Sunset Road Bikini</p>
+          <p>Bottm, AZ 22222</p>
+     </div>
+     
+     <div class='bottom-right'>
+          <h2 class="contact">CONTACT</h2>
+          <p>Email: blank@blank.com</p>
+          <p>Phone Number: XXX-XXX-XXXX</p>
+     </div>
+
+   </footer>
+
+{% endblock content %};

@@ -1,0 +1,28 @@
+{% extends "root.html" %}
+
+{% block content %}
+
+    {% load static %}
+    <div class="services-title-photo-container">
+        <img src={% static "images/IMG_1270.jpg" %} class="services-title-photo" alt="salon-photo">
+    </div>
+    <h1 class="services-title">WHAT WE DO</h1>
+    <h3 class="services-subheader">Fall in love with nurturing yourself</h3>
+
+    <div class="services-container">
+        {% for service in services %}
+            <div class="service">
+                <div class="service-padding">
+                    <div class="service-prices">
+                        <h1 class="service-title">{{ service.name }}</h1>
+                        <p>${{ service.price }}</p>
+                        <a id="bookbtn-service" href="{% url 'booking' %}" {% if request.path == "/booking/" %}class="disabled"{% endif %}>BOOK NOW</a>
+                        </div>
+                        {% if service.image.url %}
+                            <img src="{{ service.image.url }}" alt="Service Image" class="service-image">
+                        {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

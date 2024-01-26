@@ -1,0 +1,38 @@
+{% extends "root.html" %}
+
+{% block content %}
+    <div class="about-container">
+        {% load static %}
+        <img src={% static "images/IMG_4905.jpg" %} alt="group-photo" class="group-photo">
+
+        <div class="about-description">
+            <h1>WHO WE ARE</h1>
+            <div class="about-description-container">
+            <p>
+                Step into a world of beauty and sophistication at Admired by Many, our premier salon nestled in the heart of the community. With a commitment to excellence, our skilled professionals craft experiences that go beyond the ordinary haircut or spa treatment. Every visit to Admired by Many is an immersion into a realm where style meets expertise, ensuring that each client emerges not only looking but feeling truly admired.
+                <br><br><br>More than just a salon, we're a vibrant community that celebrates individuality and self-expression. At Admired by Many, we set trends, nurture creativity, and consider every client an integral part of our extended family. Join us on this enchanting journey where your unique beauty is not just acknowledged but celebrated, making Admired by Many more than a salon—it's an ode to your distinctive style.
+                <br><br><b>Let's Connect!</b> 
+                <a href="https://www.instagram.com/YourPage" target="_blank"><i class="fa-brands fa-instagram fa-xl" style="color: #121212;"></i></a><a href="https://www.facebook.com/YourPage" target="_blank"><i class="fa-brands fa-facebook-f fa-xl" style="color: #000000;"></i></a>  
+            </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="stylist">
+            <h1 class="stylist-title">OUR STYLISTS</div>
+    </div>
+    
+    <div class="stylists-container">
+        {% for stylist in stylists %}
+            <div class="stylists">
+                <div class="stylistdropdown">
+                    <span class="stylist-name">{{ stylist.name }}</span>
+                    <p class="stylist-description">{{ stylist.description }}</p>
+                </div>
+                <img src="{{ stylist.image.url }}" class="stylist-image" alt="stylist-photo"/>
+            </div>
+        {% endfor %}
+    </div>
+
+    
+{% endblock content %}

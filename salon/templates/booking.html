@@ -1,0 +1,23 @@
+{% extends "root.html" %}
+
+{% block content %}
+<h2 class="booking-title">Book a Service</h2>
+<form method="post" class="booking-form" action="{% url 'booking' %}">
+    {% csrf_token %}
+    
+    <div class="mb-3 booking-inputs">
+        <label for="{{ form.date.id_for_label }}" class="form-label booking-label">Date:</label>
+        {{ form.date }}
+    </div>
+    <div class="mb-3 booking-inputs">
+        <label for="{{ form.time.id_for_label }}" class="form-label booking-label">Time:</label>
+        {{ form.time }}
+    </div>
+    <div class="mb-3 booking-inputs">
+        <label for="{{ form.service.id_for_label }}" class="form-label booking-label">Service:</label>
+        {{ form.service }}
+    </div>
+    <button type="submit" class="btn btn-primary booking-button">Book Now</button>
+</form>
+
+{% endblock content %}
